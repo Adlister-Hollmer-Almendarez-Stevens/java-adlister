@@ -21,7 +21,7 @@ public class ChangePasswordServlet extends HttpServlet {
         }
         request.getRequestDispatcher("/WEB-INF/change-password.jsp").forward(request, response);
     }
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         User user = (User) request.getSession().getAttribute("user");
         String oldPassword = request.getParameter("old-password");
         String newPassword = request.getParameter("new-password");
@@ -35,8 +35,8 @@ public class ChangePasswordServlet extends HttpServlet {
             user.setPassword(hashedNewPassword);
             System.out.println("new password: " + user.getPassword());
             long userId = user.getId();
-
             DaoFactory.getUsersDao().updateUser(user, userId);
+            response.sendRedirect("/");
         }
     }
 }
