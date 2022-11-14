@@ -10,6 +10,7 @@
 
     <div class="container">
         <h1>Welcome, ${sessionScope.user.username}!</h1>
+        <span><a href="/change-password">Change password</a></span>
     </div>
 
 </body>
