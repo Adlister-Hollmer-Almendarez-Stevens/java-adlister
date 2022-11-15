@@ -17,8 +17,13 @@
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
             <p>Created by user id: ${ad.userId}</p>
+            <form method="post" action="/ads/delete">
+                <input name="ad_id" type="hidden" value="${ad.id}">
+                <button type="submit">Delete</button>
+            </form>
         </div>
     </c:forEach>
+
 </div>
 
 </body>
