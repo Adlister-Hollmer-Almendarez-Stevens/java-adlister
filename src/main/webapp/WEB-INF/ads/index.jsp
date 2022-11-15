@@ -16,6 +16,7 @@
         <div class="col-md-6">
             <h2>${ad.title}</h2>
             <p>${ad.description}</p>
+            <p>Created by user id: ${ad.userId}</p>
         </div>
     </c:forEach>
 </div>
