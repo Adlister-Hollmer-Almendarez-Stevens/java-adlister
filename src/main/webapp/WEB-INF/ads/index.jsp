@@ -14,6 +14,13 @@
 
 <div class="container">
     <h1>Here Are all the ads!</h1>
+    <form method="get" action="/ads">
+        <p>Search for ad by title</p>
+        <input name="search-criteria" type="text">
+        <button type="submit">Search</button>
+    </form>
+
+    <span><a href="/ads/create">Create ad</a></span>
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
