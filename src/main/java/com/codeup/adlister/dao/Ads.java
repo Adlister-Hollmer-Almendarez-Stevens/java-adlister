@@ -12,4 +12,7 @@ public interface Ads {
     Long insert(Ad ad);
 
     void deleteAd(long id)throws SQLException;
+
+
+    void updateAd(Ad ad) throws SQLException;
 }
